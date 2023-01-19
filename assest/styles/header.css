@@ -1,0 +1,169 @@
+.cabecalho_menu{
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/Menu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.cabecalho{
+    background-color: var(--branco);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+.container-img{
+    padding: 1em;
+}
+
+.lista_menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+}
+
+.container_botao:checked~.lista_menu{
+    display: block;
+}
+
+.lista_menu-titulo, .lista_menu-item{
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista_menu-titulo{
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista_menu_link{
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: capitalize;
+}
+
+.container_botao{
+    display: none;
+}
+
+
+/* configurando pseudo-codigo */
+.container_botao:checked ~ .container_rotulo > .cabecalho_menu{
+    background-image: url(../img/Menu\ Aberto.png);
+}
+
+.container_botao:checked ~ .container_rotulo{
+    background: var(--azul-degrade);
+}
+
+
+
+
+/* configurando para não aparecer quando esiver no layout celular */
+.container_tituloHeader,.opcoes{
+    display: none;
+}
+
+.container_texto{
+    display: none;
+}
+
+
+
+/* configurando para aparecer quando esiver no layout Tablet */
+
+@media screen and (min-width: 1024px)
+ {
+    .container_tituloHeader, .container_titulo_negrito{
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    .container_tituloHeader{
+        font-weight: 400;
+        display: block;
+    }
+
+    .container_titulo_negrito{
+        font-weight: 700;
+    }
+
+    .opcoes{
+        display: flex;
+    }
+
+    .opcoes_item{
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+    .opcoes_link{
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .container-img-transparente, .cabecalho_menu{
+        display: none;
+    }
+
+    .opcoes_menu_botao:checked ~ .lista_menu{
+        display: block;
+        width: auto;
+    }
+
+    .opcoes_menu_botao{
+        display: none;
+    }
+
+    /* configurando pseudo-codigo quando tiver modo tablet */
+    .opcoes_menu_botao:checked ~ .opcoes_rotulo > .opcoes_item{
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+    .opcoes_item{
+        padding: 2em 1em;
+    }
+
+    .lista_menu-item:hover{
+        background: var(--azul-degrade);
+    }
+
+    .lista_menu-item:hover> .lista_menu_link{
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+}
+
+
+/* configurando para aparecer quando esiver no layout PC */
+@media screen and (min-width: 1728px)
+ {
+    .cabecalho{
+        padding: 0 2em;;
+    }
+    .container_link{
+        display: flex;  
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .opcoes{
+        margin-right: auto;
+    }
+
+    .container_texto{
+        display: block;
+    }
+}

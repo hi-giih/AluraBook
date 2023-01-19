@@ -1,0 +1,48 @@
+.container_tres{
+    background: var(--azul-degrade);
+    text-align: center;
+}
+
+.titulo_visitados{
+    color: var(--branco);
+    font-weight: 300;
+    font-size: 16px;
+    padding: 1em;
+}
+
+.topicos_lista{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.topicos_item{
+    margin: 2em 0.5em;
+}
+
+.botoes_descricao{
+    color: var(--branco);
+    padding: 1em;
+    background-color: var(--laranja);
+    text-decoration: none;
+}
+
+/* configurando para aparecer quando esiver no layout Tablet */
+@media screen and (min-width: 1024px){
+    .titulo_visitados{
+        font-size: 24px;
+    }
+
+    .botoes_descricao{
+       font-size: 24px;
+    }
+}
+
+
+/* configurando para aparecer quando esiver no layout Tablet */
+@media screen and (min-width: 1728px)
+{
+    .container_tres{
+        padding: 3em 30vw;
+    }
+}
